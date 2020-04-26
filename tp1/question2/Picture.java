@@ -20,6 +20,7 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle sun2;
 
     /**
      * Constructor for objects of class Picture
@@ -32,6 +33,8 @@ public class Picture {
      * Draw this picture.
      */
     public void draw() {
+        
+       // sun2.makeInvisible();
         wall = new Square();
         wall.moveVertical(80);
         wall.changeSize(100);
@@ -55,8 +58,8 @@ public class Picture {
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
     }
-
     /**
      * Change this picture to black/white display
      */
@@ -67,7 +70,23 @@ public class Picture {
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            sun2.changeColor("black");
         }
+    }
+/**
+     * make the sun goes slowley for the sunset
+     */
+    
+        public void sunSet(){
+            sun.makeInvisible();
+            sun2 = new Circle();
+            sun2.makeVisible();
+        sun2.changeColor("blue");
+        sun2.slowMoveVertical(100);
+        sun2.moveHorizontal(150);
+        sun2.moveVertical(50);
+        sun2.changeSize(60);
+        sun2.makeVisible();
     }
 
     /**
