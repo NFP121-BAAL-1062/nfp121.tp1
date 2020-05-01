@@ -44,8 +44,18 @@ public class AuditeurCNAM {
      * @return le login du Cnam simplifié, sans les adaptations dues aux
      *         homonymes...
      */
+    public String noAccent(String s) {
+        String with ="öôòõüûùÀÂÄÃÉÈÊËÎÏÌÖÔÒÕÜÛÙàâäãéèêëîïì";
+        String without ="oooouuuaaaaeeeeiiioooouuuaaaaeeeeiii";
+        
+        int m= with.length();
+        for(int i=0; i<m;i++) {
+            s=s.replace(with.charAt(i), without.charAt(i));
+        }
+        return s;}
+        
     public String login() {
-        String n=nom().substring(0,5);
+        String n=nom().substring(0,6);
         String p=prenom().substring(0,1);
         return n.toLowerCase() +"_"+ p.toLowerCase();// à compléter
     }

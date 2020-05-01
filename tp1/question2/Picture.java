@@ -59,6 +59,13 @@ public class Picture {
         sun.changeSize(60);
         sun.makeVisible();
         
+        sun2 = new Circle();
+        sun2.changeColor("blue");
+        sun2.moveHorizontal(180);
+        sun2.moveVertical(-10);
+        sun2.changeSize(60);
+        sun2.makeVisible();
+        
     }
     /**
      * Change this picture to black/white display
@@ -78,15 +85,9 @@ public class Picture {
      */
     
         public void sunSet(){
-            sun.makeInvisible();
-            sun2 = new Circle();
-            sun2.makeVisible();
-        sun2.changeColor("blue");
-        sun2.slowMoveVertical(100);
-        sun2.moveHorizontal(150);
-        sun2.moveVertical(50);
-        sun2.changeSize(60);
-        sun2.makeVisible();
+           if(sun!=null)
+            sun2.slowMoveVertical(40);
+            
     }
 
     /**
